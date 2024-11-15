@@ -12,7 +12,7 @@ interface IProps {
 
 const vehiclesService = new VehiclesService();
 
-export default async function VehiclePage({ searchParams }: IProps) {
+export default async function MaintaenancePage({ searchParams }: IProps) {
   const page = searchParams.page ? parseInt(searchParams.page) : 1;
   const size = searchParams.size ? parseInt(searchParams.size) : 5;
   const response = await vehiclesService.findAllVehicles(page, size);

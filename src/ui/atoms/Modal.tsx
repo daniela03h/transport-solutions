@@ -1,5 +1,6 @@
 import React from "react";
-// import { IoClose } from 'react-icons/io5';
+import { Icon } from "@iconify/react";
+
 
 interface IProps{
   children: React.ReactNode;
@@ -10,7 +11,13 @@ export const Modal:React.FC<IProps> = ({children, propFunction}) => {
   return (
     <div>
         <div>
-          <button onClick={propFunction}><IoClose /></button>
+          <button onClick={propFunction}>
+          <Icon
+                  icon="material-symbols:close"
+                  width="20"
+                  height="20"
+                />
+          </button>
             {children}
         </div>
     </div>

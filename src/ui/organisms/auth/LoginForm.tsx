@@ -1,6 +1,5 @@
 "use client"
 
-
 import { Button } from "@/ui/atoms/Button";
 import { FormField } from "@/ui/molecules/common/FormField";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -9,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { Icon } from '@iconify/react';
-import { ILoginRequest } from "@/app/core/application/dto/login-request.dto";
+import { ILoginRequest } from "@/app/core/application/dto/auth/login-request.dto";
 
 
 const loginSchema = yup.object().shape({
@@ -50,7 +49,6 @@ export const LoginForm = () => {
       if (result?.error) {
         console.log("Ocurrio un error", JSON.parse(result.error));
         JSON.parse(result.error)
-        // handleError(JSON.parse(result.error))
         return;
       }
       router.push("/dashboard/services/vehicle")
